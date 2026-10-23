@@ -96,6 +96,9 @@ void PlotInfo::Move(Vec2<float> distance) {
 }
 
 void PlotInfo::Zoom(float coefficient) {
+    if (sizeUnit <= 1) {
+        return;
+    }
     sizeUnit += coefficient;
     pixelPerUnit = sizePixel/sizeUnit;
 }
